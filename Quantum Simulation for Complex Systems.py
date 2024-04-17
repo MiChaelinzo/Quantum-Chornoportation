@@ -1,8 +1,10 @@
 import cirq
 
-# Define qubits and Hamiltonian (replace with your system)
+# Define qubits
 qubits = cirq.LineQubit.range(4)
-hamiltonian = # Define the Hamiltonian of your system
+
+# Example Hamiltonian: H = X⊗X + Z⊗I
+hamiltonian = cirq.PauliString(cirq.X(qubits[0]) * cirq.X(qubits[1])) + cirq.PauliString(cirq.Z(qubits[0]))
 
 # Define simulation time steps and parameters
 time_steps = 100
@@ -19,4 +21,4 @@ simulator = cirq.Simulator()
 results = simulator.simulate(circuit, qubit_order=qubits)
 
 # Analyze the simulation results (e.g., expectation values of observables)
-# ...
+# ... (add your analysis code here)
